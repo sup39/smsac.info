@@ -1,0 +1,19 @@
+{
+  "name": "smsac.info",
+  "private": true,
+  "scripts": {
+    "build": "supSite"
+  },
+  "devDependencies": {
+    "@sup39/markdown-it-attr": "^1.2.2",
+    "@sup39/markdown-it-block-tag": "^0.1.0",
+    "@sup39/markdown-it-cjk-breaks": "^1.2.0",
+    "@sup39/markdown-it-inline-tag": "^1.0.1",
+    "@sup39/markdown-it-katex": "^2.0.4",
+    "@sup39/sup-site": "^0.1.0-alpha3",
+    "html-minifier": "^4.0.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.5",
+    "sass": "^1.55.0"
+  }
+}
