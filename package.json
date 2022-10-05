@@ -10,7 +10,7 @@
     "@sup39/markdown-it-cjk-breaks": "^1.2.0",
     "@sup39/markdown-it-inline-tag": "^1.0.1",
     "@sup39/markdown-it-katex": "^2.0.4",
-    "@sup39/sup-site": "^0.1.0-alpha4",
+    "@sup39/sup-site": "^0.1.0-alpha5",
     "html-minifier": "^4.0.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.5",
