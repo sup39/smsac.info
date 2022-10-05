@@ -9,10 +9,12 @@ const fs0 = require('fs');
 const meta = `
 <meta charset="utf8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
 `;
 const headExtra = `
-<link rel="stylesheet" type="text/css" href="/index.css">
-<script src="/index.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/index.css">
+<script src="/assets/index.js"></script>
 `;
 module.exports = {
   name: 'SMS研究Info',
@@ -23,6 +25,10 @@ module.exports = {
       async compile(src, dst, nav) {
         const raw = await fs.readFile(src, 'utf8');
         let html = md.render(raw);
+        html = html.replace(
+          /<style\s+lang="(s[ac]ss)">([\s\S]*?)<\/style>/g,
+          (_, lang, s) => `<style>${sass.compileString(s, {syntax: lang==='sass'?'indented':'scss'}).css}</style>`,
+        );
         const head = html.match(/\<head\>([\s\S]*?)\<\/head\>/)?.[1];
         const body = html.replace(/<head>[\s\S]*?<\/head>/, '');
         html = `<html><head>${meta}${head}${headExtra}</head><body>${nav}<main>${body}</main></body></html>`;

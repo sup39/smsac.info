@@ -2,6 +2,5 @@ nav:
   - title: 研究の始め方
     src: getting-started/
 static:
-  - index.js
-  - index.sass
-  - anchor.svg
+  - assets/
+  - assets/index.sass

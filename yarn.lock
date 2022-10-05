@@ -31,10 +31,10 @@
   dependencies:
     katex "^0.15.2"
 
-"@sup39/sup-site@^0.1.0-alpha3":
-  version "0.1.0-alpha3"
-  resolved "https://registry.yarnpkg.com/@sup39/sup-site/-/sup-site-0.1.0-alpha3.tgz#0d22879d7e9a093f5905fc99f79f53c61e659676"
-  integrity sha512-0G3hV/49EyvNR5IdBh46L+euFNcOh8hk/a58nQ3SWOCFQNWLDe1GhyKrUWTF09l2cou8jkRLR/FQ4CD9TkzuLQ==
+"@sup39/sup-site@^0.1.0-alpha4":
+  version "0.1.0-alpha4"
+  resolved "https://registry.yarnpkg.com/@sup39/sup-site/-/sup-site-0.1.0-alpha4.tgz#d3700769b469521f00b3b71634c52277597babba"
+  integrity sha512-hr5gCxF0c8OTmf0/aQklJEm1rOMl1tBFSqaTdT/IsHsyu4Tq2PKtkAXleRGKS9Xlr3npiybqcnXGjabJleaUug==
   dependencies:
     js-yaml "^4.1.0"
     schema-utils "^4.0.0"
