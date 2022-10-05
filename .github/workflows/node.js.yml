@@ -34,6 +34,10 @@ jobs:
         cache: 'yarn'
     - run: yarn install --frozen-lockfile
     - run: yarn build
+    - uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: build
     
   deploy:
     environment:
