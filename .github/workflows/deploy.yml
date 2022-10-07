@@ -1,4 +1,4 @@
-name: Build and Deploy Github Pages
+name: Build and Deploy to Github Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -38,8 +38,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
-    - run: yarn install --frozen-lockfile
-    - run: yarn build
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+    - name: Build
+      run: yarn build
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:

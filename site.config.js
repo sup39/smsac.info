@@ -29,9 +29,13 @@ module.exports = {
           /<style\s+lang="(s[ac]ss)">([\s\S]*?)<\/style>/g,
           (_, lang, s) => `<style>${sass.compileString(s, {syntax: lang==='sass'?'indented':'scss'}).css}</style>`,
         );
-        const head = html.match(/\<head\>([\s\S]*?)\<\/head\>/)?.[1];
         const body = html.replace(/<head>[\s\S]*?<\/head>/, '');
-        html = `<html><head>${meta}${head}${headExtra}</head><body>${nav}<main>${body}</main></body></html>`;
+        const head = html.match(/<head>([\s\S]*?)<\/head>/)?.[1];
+        // add h1 TODO
+        const h1 = body.match(/<h1[^>]*>(.*?)<\/h1>/)?.[1];
+        const title = head.match(/<title>.*?<\/title>/) == null ? `<title>${h1}</title>` : '';
+        // make html
+        html = `<html><head>${title}${meta}${head}${headExtra}</head><body>${nav}<main>${body}</main></body></html>`;
         html = htmlMinify(html, {
           removeComments: true,
           collapseWhitespace: true,

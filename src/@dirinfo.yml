@@ -1,6 +1,8 @@
 nav:
-  - title: 研究の始め方
-    src: getting-started/
+  #- title: 研究の始め方
+  #  src: getting-started/
+  - title: リンク集
+    src: link.md
 static:
   - assets/
   - assets/index.sass

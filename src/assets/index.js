@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // nav
   const {pathname} = window.location;
   const clsFoldOpen = 'nav-fold-open';
   document.querySelectorAll('nav div.nav-entry > svg').forEach(elm => {
