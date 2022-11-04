@@ -20,9 +20,6 @@ const withMDX = mdx({
 export default withMDX({
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
   webpack(config) {
     config.module.rules.push({
       test: /\.ya?ml$/,

@@ -36,10 +36,14 @@
           "indent": "off"
         }
       }
-    ]
+    ],
+    "rules": {
+      "@next/next/no-img-element": "off"
+    }
   },
   "eslintIgnore": [
-    "node_modules"
+    "node_modules",
+    "out"
   ],
   "dependencies": {
     "@mdx-js/loader": "^2.1.5",
