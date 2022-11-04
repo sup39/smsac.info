@@ -1,11 +1,11 @@
 {
   "name": "supMDX",
   "version": "0.1.0",
-  "main": "index.js",
-  "license": "MIT",
+  "private": "true",
+  "repository": "https://github.com/SMS-Academic-Institute/smsac.info",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.mdx ."
   },

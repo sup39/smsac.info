@@ -1,9 +1,10 @@
 site:
   startYear: 2022
-  author: <Edit author name in supMDX.yml>
-  name: <Site Name>
+  author: サンシャイン研究チーム
 metaFields:
-  - {prop: author, label: 'Author: '}
-  - {prop: createdAt, label: 'Created at '}
-  - {prop: updatedAt, label: 'Updated at '}
-nav: []
+  - {prop: author, label: '作者：'}
+  - {prop: createdAt, label: '作成日時：'}
+  - {prop: updatedAt, label: '更新日時：'}
+nav:
+  - name: リンク集
+    link: link

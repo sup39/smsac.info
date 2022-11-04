@@ -1,11 +1,14 @@
 import Link from 'next/link';
-import config from '#config';
+import Image from 'next/image';
 
 export default function NavHeader({onToggleFold}: {onToggleFold?: ()=>void}) {
-  const {site: {name: siteName = 'supMDX'} = {}} = config;
   return <header>
     <Link href="/" id="icon-link">
-      <div style={{fontSize: '1.5em'}}>{siteName}</div>
+      <Image className='icon' src='/favicon.svg' alt='icon' width={96} height={96} />
+      <div className="icon-text">
+        <div>SMS</div>
+        <div>研究Info</div>
+      </div>
     </Link>
     <div className="menu-toggle" onClick={onToggleFold} />
   </header>;
