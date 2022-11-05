@@ -13,8 +13,8 @@ const extendedHx = Object.fromEntries(hx.map(H => [H,
   </H>,
 ]));
 
-export default function App({Component, pageProps, router: {pathname}}: AppProps) {
+export default function App({Component, pageProps, router}: AppProps) {
   return <MDXProvider components={{S, ...extendedHx}}>
-    <Component data={{pathname}} {...pageProps} />
+    <Component router={router} {...pageProps} />
   </MDXProvider>;
 }

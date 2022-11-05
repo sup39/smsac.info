@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import type {AppProps} from 'next/app';
 import Nav from './Nav';
 // import Footer from './Footer';
 import MetaInfo from './MetaInfo';
@@ -6,9 +7,7 @@ import type {HeadingInfo} from '@sup39/rehype-mdx-export-headings';
 
 export type MDXProps = {
   children: JSX.Element
-  data: {
-    pathname: string,
-  },
+  router: AppProps['router'],
   meta: Partial<{
     title: string
     description: string
@@ -18,7 +17,7 @@ export type MDXProps = {
   headings: HeadingInfo[]
 };
 
-export default function MDXRoot({children, data: {pathname}, meta={}, headings}: MDXProps) {
+export default function MDXRoot({children, router: {pathname}, meta={}, headings}: MDXProps) {
   const {title, description} = meta;
   const h1 = meta.h1 ?? title;
   return <>
