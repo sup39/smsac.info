@@ -1,6 +1,9 @@
 import mdx from '@next/mdx';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import ExportHeadings from '@sup39/rehype-mdx-export-headings';
 import ComponentWrapper from '@sup39/rehype-mdx-component-wrapper';
 
@@ -9,11 +12,14 @@ const withMDX = mdx({
   options: {
     remarkPlugins: [
       remarkFrontmatter,
-      () => remarkMdxFrontmatter({name: 'meta'}),
+      remarkGfm,
+      remarkMath,
+      [remarkMdxFrontmatter, {name: 'meta'}],
     ],
     rehypePlugins: [
-      () => ExportHeadings({tags: ['h2'], name: 'headings'}),
-      () => ComponentWrapper({props: ['headings', 'meta']}),
+      rehypeKatex,
+      [ExportHeadings, {tags: ['h2'], name: 'headings'}],
+      [ComponentWrapper, {props: ['headings', 'meta']}],
     ],
   },
 });
